@@ -1,0 +1,1 @@
+Struts 2 web app. Maybe a budget control tool / personal accounting tool
