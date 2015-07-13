@@ -1,4 +1,4 @@
-package me.noip.struts2;
+package me.noip.struts2.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
 
