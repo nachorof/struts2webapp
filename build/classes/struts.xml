@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+ "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+ "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<constant name="struts.devMode" value="true" />
+ <package name="helloWorld" namespace="/" extends="struts-default">
+ 	<!--  interceptors>
+ 		<interceptor name="myInterceptor" class="me.noip.struts2.interceptor.MyInterceptor"/>
+ 		<interceptor name="loginInterceptor" class="me.noip.struts2.interceptor.LoginInterceptor"/> 
+ 	</interceptors>
+ 	
+ 	<global-results>
+ 		<result name="login">/login.jsp</result>
+ 	</global-results-->
+ 	
+ 	<action name="login" class="me.noip.struts2.actions.LoginAction" method="execute">
+ 			<result name="success">/WEB-INF/home.jsp</result>
+ 			<result name="error">/WEB-INF/error.jsp</result>
+ 			<result name="input">/WEB-INF/error.jsp</result>
+ 	</action>
+ </package>
+</struts>

@@ -10,35 +10,38 @@
 	<meta name="description" content="Struts 2 web app">
     <meta name="author" content="Nasty Nash">
     <!--  link rel="icon" href="../../favicon.ico"> -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<!--  link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"-->
 	<title>Hello World Struts 2</title>
 </head>
 <body>
 	<!-- nav menu -->
 	
-	<ul class="nav nav-tabs">
+	<!--  ul class="nav nav-tabs">
   		<li role="presentation" class="active"><a href="#">Home</a></li>
   		<li role="presentation"><a href="./LogIn.jsp">Login</a></li>
-  		<li role="presentation"><a href="#">Messages</a></li>
-	</ul>
+  		<li role="presentation"><a href="#">Signup</a></li>
+	</ul -->
 	
 	
     <div class="container">
-		<h1>Hello World Struts Form</h1>
-		<form action="hello" method="post">
+		<h1>Welcome Page!</h1>
+		<!--form action="hello" method="post">
 			<label for="name">Please enter your name:</label>
 			<input type="text" name="name"/>
 			<input type="submit" value="Say hello!"/>
-		</form>
-        	<p>Lorem ipsum.<br/> sit amen</p>
+		</form-->
+        	<p>
+        		<a href="./login.jsp">Login</a>
+        		<a href="./signup.jsp">Signup</a>
+        	</p>
       </div><!-- /.container -->
 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script-->
+    <!-- script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script-->
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
 

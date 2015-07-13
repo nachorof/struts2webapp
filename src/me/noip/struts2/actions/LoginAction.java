@@ -7,14 +7,17 @@ public class LoginAction extends ActionSupport {
 	private String username;
 	private String password;
 	private Integer trialNumber;
+	private static Integer MAX_NUM_TRIES = 3;
 	
 	public LoginAction() {
 		// TODO Auto-generated constructor stub
 	}
 	
 	public String execute(){
-		//se toman los datos y se llaman a las clases de negocio
-		return SUCCESS;
+		if (this.username.equals("nacho")){
+			return SUCCESS;
+		}
+		return ERROR; //tendria que redirigir a otra pagina
 	}
 
 	public String getUsername() {

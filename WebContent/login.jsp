@@ -32,20 +32,20 @@
   </head>
 
   <body>
-   <ul class="nav nav-tabs">
+   <!--ul class="nav nav-tabs">
   <li role="presentation" ><a href="#">Home</a></li>
   <li role="presentation" class="active"><a href="./LogIn.jsp">Login</a></li>
   <li role="presentation"><a href="#">Messages</a></li>
-</ul>
+</ul-->
 
     <div class="container">
 
-      <form class="form-signin" action="login" method="post">
+      <form class="form-signin" action="login" method="get">
         <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="username" class="sr-only">Username</label>
+        <input type="text" id="username" name="username" class="form-control" placeholder="username" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> Remember me

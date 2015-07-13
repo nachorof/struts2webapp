@@ -17,9 +17,17 @@
 
 	<!-- nav menu -->
     <div class="container">
-		<h1>Hello World Struts</h1>
-        	<p>Hello World, <s:property value="name"/>!</p>
+		<h1>Hola usario <s:property value="username"/>!</h1>
+        	<p>Hello World, <s:property value="username"/>!</p>
       </div><!-- /.container -->
+      
+      <p> 
+      	<h3> Menu</h3>
+      	<ul>
+      		<li>Inbox</li>
+      		<li>Logout</li>
+      	</ul>
+       </p>
 
 
     <!-- Bootstrap core JavaScript

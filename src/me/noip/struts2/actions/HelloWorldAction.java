@@ -7,8 +7,9 @@ public class HelloWorldAction extends ActionSupport {
 	private String name;
 	
 	public String execute() throws Exception{
-		if ("SECRET".equalsIgnoreCase(name)) return SUCCESS;
-		return ERROR;
+		//if ("SECRET".equalsIgnoreCase(name)) return SUCCESS;
+		//return ERROR;
+		return SUCCESS;
 	}
 
 	public String getName() {
