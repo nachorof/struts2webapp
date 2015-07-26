@@ -6,21 +6,29 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<meta name="description" content="Struts 2 web app">
     <meta name="author" content="Nasty Nash">
 	<title>Hello World Struts 2</title>
 </head>
 <body>
-	
-	
-		<h1>Welcome Page!</h1>
-        	<p>
-        		<a href="<s:url action='redirect-login'/>">Login</a>
-        		<a href="<s:url action='signup'/>">Signup</a>
-        	</p>
-    
 
-	
+	<h1>Hola <s:property value="#session['username']"/>!</h1>  
+	<h1>Que tal ${username}?</h1>  
+   
+   <%@ include file="/WEB-INF/jsp/inc/menu.jsp" %>
+    
+    <!-- iterar sobre el objeto REQUEST para recuperar los mensajes -->
+    <p>
+    <table>		
+       	<s:iterator value="messages" status="status">
+    		<tr class="<s:if test="#status.even">even</s:if><s:else>odd</s:else>">
+    			<td><s:property value="top.message"/></td>
+    		</tr>
+    	</s:iterator>
+    </table>
+    </p>
+       	
+	<%@ include file="/WEB-INF/jsp/inc/footer.jsp" %>
+
 </body>
 </html>

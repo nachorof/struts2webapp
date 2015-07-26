@@ -12,11 +12,50 @@
  	</interceptors>
  	
  	<global-results>
- 		<result name="login">/login.jsp</result>
+ 		<result name="login">/WEB-INF/jsp/login.jsp</result>
  	</global-results>
  	
+ 	<!-- link de index a WEB-INF/*/login -->
+ 	<action name="redirect-login">
+ 		<result name="success">/WEB-INF/jsp/login.jsp</result>
+ 	</action>
+ 	
  	<action name="login" class="me.noip.struts2.actions.LoginAction" method="execute">
- 		<interceptor-ref name="myInterceptor"/>
+ 		<interceptor-ref name="defaultStack"/>
+ 		<result name="success" type="redirectAction">inbox</result>
+ 		<!-- result name="success">ok.jsp</result-->
+ 	</action>
+ 	
+ 	<action name="inbox" class="me.noip.struts2.actions.InboxAction" method="execute">
+ 		<interceptor-ref name="loginInterceptor"/>
+ 		<interceptor-ref name="defaultStack"/>
+ 			<result name="success">/WEB-INF/jsp/home.jsp</result>
+ 			<result name="error">/WEB-INF/jsp/error.jsp</result>
+ 			<result name="input">/WEB-INF/jsp/error.jsp</result>
+ 	</action>
+ 	
+ 	<action name="logout" class="me.noip.struts2.actions.LogoutAction" method="execute">
+ 		<interceptor-ref name="defaultStack"/>
+ 			<result name="success">index.jsp</result>
+ 	</action>
+ 	
+ 	<action name="write_message">
+ 		<interceptor-ref name="loginInterceptor"/>
+ 		<interceptor-ref name="defaultStack"/>
+ 			<result name="success">/WEB-INF/jsp/writemessage.jsp</result>
+ 	</action>
+ 	
+ 	<action name="send_message" class="me.noip.struts2.actions.SendMessageAction" method="execute">
+ 		<interceptor-ref name="loginInterceptor"/>
+ 		<interceptor-ref name="defaultStack"/>
+ 			<result name="success">/WEB-INF/jsp/messagesent.jsp</result> <!-- hay que redirigir a la action login -->
+ 			<result name="error">/WEB-INF/jsp/error.jsp</result>
+ 			<result name="input">/WEB-INF/jsp/error.jsp</result>
+ 	</action>
+ 	
+ 	
+ 	<action name="get_messages" class="me.noip.struts2.actions.InboxAction" method="execute">
+ 		<interceptor-ref name="loginInterceptor"/>
  		<interceptor-ref name="defaultStack"/>
  			<result name="success">/WEB-INF/home.jsp</result>
  			<result name="error">/WEB-INF/error.jsp</result>

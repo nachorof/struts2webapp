@@ -1,23 +1,25 @@
 package me.noip.struts2.actions;
 
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
 import com.opensymphony.xwork2.ActionSupport;
 
-public class LoginAction extends ActionSupport {
-
+public class LoginAction extends ActionSupport implements SessionAware {
+	
 	private String username;
 	private String password;
-	private Integer trialNumber;
-	private static Integer MAX_NUM_TRIES = 3;
+	private Map<String,Object> session;
 	
-	public LoginAction() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	public String execute(){
-		if (this.username.equals("nacho")){
-			return SUCCESS;
+	public String execute() throws Exception{
+		//if ("SECRET".equalsIgnoreCase(name)) return SUCCESS;
+		//return ERROR;
+		if (username.equalsIgnoreCase("nacho")){
+			session.put("username", username);
+			return SUCCESS;	
 		}
-		return ERROR; //tendria que redirigir a otra pagina
+		return LOGIN;
 	}
 
 	public String getUsername() {
@@ -36,14 +38,10 @@ public class LoginAction extends ActionSupport {
 		this.password = password;
 	}
 
-	public Integer getTrialNumber() {
-		return trialNumber;
+	@Override
+	public void setSession(Map<String, Object> session) {
+		// TODO Auto-generated method stub
+		this.session = session;
 	}
-
-	public void setTrialNumber(Integer trialNumber) {
-		this.trialNumber = trialNumber;
-	}
-	
-	
 
 }
